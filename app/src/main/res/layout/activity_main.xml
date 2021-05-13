@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0B0B"
+    tools:context=".view.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_frame"
+        android:elevation="8dp"
+        />
+
+    <TextView
+        android:id="@+id/pokemon_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pokemon"
+        android:background="@drawable/ic_round"
+        android:textStyle="bold"
+        android:fontFamily="@font/bubble_gum"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pokemon_recyclerview"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pokemon_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/pokemon_item_layout"
+        app:layout_constraintTop_toBottomOf="@id/pokemon_textview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
